@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Welcome to My Website
+title: Le Hoang Quang Trung - Enterprise Architect & Project Manager
 ---
 
 <!DOCTYPE html>
@@ -8,16 +8,88 @@ title: Welcome to My Website
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohoatu - Personal Website</title>
+    <title>Le Hoang Quang Trung - Enterprise Architect & PM</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        :root{--bg:#0f1419;--panel:#1a2129;--accent:#4fa3d1;--accent2:#6dd5b0;--text:#e6edf3;--muted:#9aa7b4;--line:#2a333d}
+        *{box-sizing:border-box;margin:0;padding:0}
+        body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+        .container{max-width:960px;margin:0 auto;padding:0 24px}
+        a{color:var(--accent);text-decoration:none}
+        a:hover{text-decoration:underline}
+
+        .navbar{position:sticky;top:0;z-index:50;background:rgba(15,20,25,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+        .navbar .container{display:flex;align-items:center;justify-content:space-between;height:60px}
+        .logo{font-size:1.15rem;font-weight:700;letter-spacing:.5px;color:var(--text)}
+        .nav-menu{display:flex;gap:22px;list-style:none}
+        .nav-menu a{color:var(--muted);font-size:.92rem;font-weight:500}
+        .nav-menu a:hover{color:var(--accent);text-decoration:none}
+
+        .hero{padding:80px 0 56px;border-bottom:1px solid var(--line);background:radial-gradient(900px 400px at 70% -10%,rgba(79,163,209,.12),transparent)}
+        .hero h1{font-size:2.6rem;line-height:1.15;margin-bottom:8px}
+        .hero .role{font-size:1.2rem;color:var(--accent2);font-weight:600;margin-bottom:18px}
+        .hero p{color:var(--muted);max-width:680px;font-size:1.02rem}
+        .hero-meta{display:flex;flex-wrap:wrap;gap:14px 26px;margin-top:24px;font-size:.92rem;color:var(--muted)}
+        .hero-meta span{display:inline-flex;align-items:center;gap:6px}
+
+        section{padding:56px 0;border-bottom:1px solid var(--line)}
+        section h2{font-size:1.5rem;margin-bottom:24px;display:inline-block;position:relative}
+        section h2::after{content:"";position:absolute;left:0;bottom:-6px;width:42px;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:2px}
+
+        .about p{color:var(--muted);margin-bottom:14px;max-width:760px}
+
+        .summary-list{list-style:none;display:grid;gap:14px}
+        .summary-list li{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:8px;padding:14px 18px}
+        .summary-list strong{color:var(--text)}
+        .summary-list span{color:var(--muted)}
+
+        .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+        .skill-card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px}
+        .skill-card h3{font-size:.95rem;color:var(--accent2);margin-bottom:10px;text-transform:uppercase;letter-spacing:.5px}
+        .tags{display:flex;flex-wrap:wrap;gap:7px}
+        .tag{background:#22303b;border:1px solid var(--line);color:var(--text);font-size:.82rem;padding:4px 10px;border-radius:14px}
+
+        .timeline{position:relative;padding-left:26px}
+        .timeline::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:var(--line)}
+        .job{position:relative;margin-bottom:30px}
+        .job::before{content:"";position:absolute;left:-26px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--bg)}
+        .job h3{font-size:1.08rem}
+        .job .company{color:var(--accent2);font-weight:600}
+        .job .period{color:var(--muted);font-size:.86rem;margin:2px 0 10px}
+        .job ul{list-style:none;display:grid;gap:6px}
+        .job ul li{color:var(--muted);font-size:.94rem;padding-left:16px;position:relative}
+        .job ul li::before{content:"▸";position:absolute;left:0;color:var(--accent)}
+
+        .project-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px}
+        .project-card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px;transition:transform .15s,border-color .15s}
+        .project-card:hover{transform:translateY(-3px);border-color:var(--accent)}
+        .project-card .ptop{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:4px}
+        .project-card h3{font-size:1.02rem}
+        .project-card .prole{color:var(--accent2);font-size:.82rem;font-weight:600}
+        .project-card .pmeta{color:var(--muted);font-size:.8rem;margin-bottom:8px}
+        .project-card p{color:var(--muted);font-size:.9rem;margin-bottom:10px}
+        .project-card .tags .tag{font-size:.75rem;padding:3px 8px}
+
+        .two-col{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+        @media(max-width:680px){.two-col{grid-template-columns:1fr}.hero h1{font-size:2rem}.nav-menu{gap:14px}}
+
+        .contact p{color:var(--muted);margin-bottom:18px}
+        .social-links{display:flex;flex-wrap:wrap;gap:14px}
+        .social-links a{background:var(--panel);border:1px solid var(--line);padding:10px 18px;border-radius:8px;font-weight:500}
+        .social-links a:hover{border-color:var(--accent);text-decoration:none}
+
+        footer{padding:28px 0;text-align:center;color:var(--muted);font-size:.86rem}
+    </style>
 </head>
 <body>
     <nav class="navbar">
         <div class="container">
-            <h1 class="logo">Mohoatu</h1>
+            <h1 class="logo">LE HOANG QUANG TRUNG</h1>
             <ul class="nav-menu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -26,34 +98,179 @@ title: Welcome to My Website
 
     <header class="hero" id="home">
         <div class="container">
-            <h1>Welcome to My Personal Website</h1>
-            <p>Discover my projects, skills, and experience</p>
+            <h1>Le Hoang Quang Trung</h1>
+            <div class="role">Enterprise Architect · Project Manager · Product Operations</div>
+            <p>Highly accomplished and results-oriented leader with over 16 years of software engineering expertise and a proven track record in project and team leadership.</p>
+            <div class="hero-meta">
+                <span>📍 Vietnam</span>
+                <span>📞 0964 975 209</span>
+                <span>✉️ <a href="mailto:mohoatu@gmail.com">mohoatu@gmail.com</a></span>
+                <span>🌐 Vietnamese (native) · English (good)</span>
+            </div>
         </div>
     </header>
 
     <section class="about" id="about">
         <div class="container">
             <h2>About Me</h2>
-            <p>Hello! I'm Mohoatu, a passionate developer and creator. Welcome to my corner of the internet!</p>
-            <p>Feel free to explore my projects and get in touch if you'd like to collaborate.</p>
+            <p>A dynamic leader with over 16 years of experience in software development, project management, and team leadership, now focused on driving successful product delivery. I bring deep technical roots as a senior software engineer together with strong capabilities in leading cross-functional teams across e-commerce, finance, and industrial domains.</p>
+            <p>I combine a Senior Software Engineer foundation with advanced AWS knowledge and microservices architecture expertise, applied to deliver products on time and aligned with business objectives.</p>
+            <ul class="summary-list" style="margin-top:20px">
+                <li><strong>Strategic project leadership —</strong> <span>Managed diverse projects (teams of 3–20) using Agile (SCRUM, KANBAN) to ensure on-time delivery aligned with business goals.</span></li>
+                <li><strong>High-performing teams —</strong> <span>Built, developed, and led technical, testing, and product teams.</span></li>
+                <li><strong>Quality & risk —</strong> <span>Orchestrated robust code review processes and efficient technical problem-solving frameworks.</span></li>
+                <li><strong>P&L ownership —</strong> <span>Proven capability managing project costs, revenue, and profitability.</span></li>
+                <li><strong>Operational depth —</strong> <span>Strong knowledge of OS and product operational models, plus microservices architecture.</span></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="skills" id="skills">
+        <div class="container">
+            <h2>Technical Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-card"><h3>Languages</h3><div class="tags"><span class="tag">Java</span><span class="tag">Node.js</span><span class="tag">Python</span></div></div>
+                <div class="skill-card"><h3>Databases</h3><div class="tags"><span class="tag">Oracle</span><span class="tag">MS SQL / MySQL</span><span class="tag">PostgreSQL</span></div></div>
+                <div class="skill-card"><h3>Cloud</h3><div class="tags"><span class="tag">AWS (Advanced)</span><span class="tag">Azure (Basic)</span><span class="tag">GCP</span></div></div>
+                <div class="skill-card"><h3>Architecture</h3><div class="tags"><span class="tag">Microservices</span><span class="tag">Spring Boot / Cloud</span></div></div>
+                <div class="skill-card"><h3>Domains</h3><div class="tags"><span class="tag">E-commerce</span><span class="tag">Finance</span><span class="tag">Industrial</span></div></div>
+                <div class="skill-card"><h3>Other</h3><div class="tags"><span class="tag">CRM (Salesforce)</span><span class="tag">AI / LLM</span><span class="tag">RPA / OCR</span></div></div>
+                <div class="skill-card"><h3>OS</h3><div class="tags"><span class="tag">Windows</span><span class="tag">Linux</span><span class="tag">macOS</span></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="experience" id="experience">
+        <div class="container">
+            <h2>Professional Experience</h2>
+            <div class="timeline">
+                <div class="job">
+                    <h3>Product Operations Specialist</h3>
+                    <div class="company">B3networks</div>
+                    <div class="period">June 2025 – Present</div>
+                    <ul>
+                        <li>Spearheaded AI-driven product innovation initiatives to enhance product functionality.</li>
+                        <li>Developed and maintained essential product documentation and knowledge management.</li>
+                        <li>Provided end-to-end product lifecycle support to Product Managers across launches and roadmap implementation.</li>
+                        <li>Conducted internal training and mentored new Product Managers.</li>
+                        <li>Tracked product performance and generated insightful reports.</li>
+                    </ul>
+                </div>
+                <div class="job">
+                    <h3>Project Manager</h3>
+                    <div class="company">Open Web Technology Vietnam</div>
+                    <div class="period">2022 – Apr 2025</div>
+                    <ul>
+                        <li>Led and managed multiple development projects aligned with business objectives and timelines.</li>
+                        <li>Orchestrated code review processes and technical problem-solving frameworks.</li>
+                        <li>Managed project quality, risk, plans, schedules, and resource allocation.</li>
+                        <li>Communicated project status, issues, and risks to stakeholders and senior management.</li>
+                    </ul>
+                </div>
+                <div class="job">
+                    <h3>Product Owner / Project Manager</h3>
+                    <div class="company">Paave</div>
+                    <div class="period">2021 – 2022</div>
+                    <ul>
+                        <li>Led cross-functional teams through the full lifecycle, launching Paave's beta on schedule.</li>
+                        <li>Built and executed the product roadmap using Agile, managing stakeholder expectations.</li>
+                        <li>Architected requirements for complex financial trading features and third-party integrations.</li>
+                        <li>Established project management best practices with Confluence and Jira.</li>
+                    </ul>
+                </div>
+                <div class="job">
+                    <h3>Technical Leader</h3>
+                    <div class="company">FinOps System (Korean customer)</div>
+                    <div class="period">2020 – 2021</div>
+                    <ul>
+                        <li>Analyzed requirements from PO/SM, proposed solutions, and secured approval.</li>
+                        <li>Managed the development team to deadlines and resolved technical issues.</li>
+                    </ul>
+                </div>
+                <div class="job">
+                    <h3>Product Owner</h3>
+                    <div class="company">Internal Product, FPT DPS</div>
+                    <div class="period">2019 – 2020</div>
+                    <ul>
+                        <li>Built a virtual operator recognizing Japanese handwriting via RPA and OCR.</li>
+                        <li>Created auto-layout advertising plugins for Adobe products.</li>
+                        <li>Built a task management system for special company projects.</li>
+                    </ul>
+                </div>
+                <div class="job">
+                    <h3>Technical Leader</h3>
+                    <div class="company">E-commerce System (Japanese customer)</div>
+                    <div class="period">2016 – 2019</div>
+                    <ul>
+                        <li>Analyzed requirements and proposed solutions.</li>
+                        <li>Managed the development team and resolved technical issues.</li>
+                    </ul>
+                </div>
+                <div class="job">
+                    <h3>Senior Software Developer → Earlier Roles</h3>
+                    <div class="company">Mail Client, Metadata & Outsourcing Projects</div>
+                    <div class="period">2010 – 2016</div>
+                    <ul>
+                        <li>Designed schemas, developed features from user stories, and built GUIs with jQuery, PrimeFaces, and JSF.</li>
+                        <li>Improved code quality using FindBugs, PMD, Checkstyle; unit testing with TestNG.</li>
+                        <li>Delivered outsourcing projects for clients including Hitachi Ltd.</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 
     <section class="projects" id="projects">
         <div class="container">
-            <h2>Projects</h2>
+            <h2>Selected Projects</h2>
             <div class="project-grid">
                 <div class="project-card">
-                    <h3>Project 1</h3>
-                    <p>Description of your first project goes here.</p>
+                    <div class="ptop"><h3>AI Knowledge Base</h3><span class="prole">Project Owner</span></div>
+                    <div class="pmeta">Singapore · 2 people · Jun 2025 – now</div>
+                    <p>Leveraged AI for product innovation using AgentSpace for knowledge sharing and product troubleshooting, partnering with Google and Atlassian.</p>
+                    <div class="tags"><span class="tag">GCP</span><span class="tag">AgentSpace</span></div>
                 </div>
                 <div class="project-card">
-                    <h3>Project 2</h3>
-                    <p>Description of your second project goes here.</p>
+                    <div class="ptop"><h3>FX Banking System</h3><span class="prole">Project Manager</span></div>
+                    <div class="pmeta">Switzerland · 5 people · 2023 – 2024</div>
+                    <p>Managed development of a foreign-currency exchange contract platform streamlining submissions between customers and the bank.</p>
+                    <div class="tags"><span class="tag">Azure</span><span class="tag">Spring Boot</span><span class="tag">JDK 11</span></div>
                 </div>
                 <div class="project-card">
-                    <h3>Project 3</h3>
-                    <p>Description of your third project goes here.</p>
+                    <div class="ptop"><h3>Medgate</h3><span class="prole">Project Manager</span></div>
+                    <div class="pmeta">Switzerland · 7 people · 2022 – 2023</div>
+                    <p>Led an offshore team delivering an award-winning healthcare platform recognized in Switzerland and Germany, ensuring EU compliance.</p>
+                    <div class="tags"><span class="tag">Azure</span><span class="tag">Spring Security</span><span class="tag">JDK 11</span></div>
+                </div>
+                <div class="project-card">
+                    <div class="ptop"><h3>Paave</h3><span class="prole">Product Owner</span></div>
+                    <div class="pmeta">Korea · 15 people · 2022</div>
+                    <p>Led an innovative social trading platform from concept to beta, with third-party financial data integrations.</p>
+                    <div class="tags"><span class="tag">AWS</span><span class="tag">AngularJS</span><span class="tag">Spring Cloud</span></div>
+                </div>
+                <div class="project-card">
+                    <div class="ptop"><h3>FinOps System</h3><span class="prole">Technical Leader</span></div>
+                    <div class="pmeta">Korea · 15 people · 2021</div>
+                    <p>Built a FinOps system spanning AWS, Azure, and other cloud platforms for a Korean customer.</p>
+                    <div class="tags"><span class="tag">AWS</span><span class="tag">Spring Cloud</span></div>
+                </div>
+                <div class="project-card">
+                    <div class="ptop"><h3>BPO Automation</h3><span class="prole">Product Owner</span></div>
+                    <div class="pmeta">FPT-DPS · 5 people · 2020 – 2021</div>
+                    <p>Improved BPO processes with OCR and RPA to automate Japanese form input.</p>
+                    <div class="tags"><span class="tag">AkaBot</span><span class="tag">AkaOCR</span><span class="tag">.NET</span></div>
+                </div>
+                <div class="project-card">
+                    <div class="ptop"><h3>Vegetarian E-commerce</h3><span class="prole">Technical Lead</span></div>
+                    <div class="pmeta">Japan · 15 people · 2016 – 2020</div>
+                    <p>Built a vegetarian e-commerce system from assessment through delivery.</p>
+                    <div class="tags"><span class="tag">AWS</span><span class="tag">Java 8</span><span class="tag">Spring</span></div>
+                </div>
+                <div class="project-card">
+                    <div class="ptop"><h3>Mail Collector</h3><span class="prole">Senior Developer</span></div>
+                    <div class="pmeta">Europe · 8 people · 2015 – 2016</div>
+                    <p>Built a mail collector enabling multi-account interaction with trusted-contact filtering, focused on performance and modern UX.</p>
+                    <div class="tags"><span class="tag">AWS</span><span class="tag">AngularJS</span><span class="tag">Spring Boot</span></div>
                 </div>
             </div>
         </div>
@@ -62,17 +279,19 @@ title: Welcome to My Website
     <section class="contact" id="contact">
         <div class="container">
             <h2>Get In Touch</h2>
-            <p>Feel free to reach out to me on social media or via email!</p>
+            <p>Open to enterprise architecture, project management, and product operations opportunities. Feel free to reach out.</p>
             <div class="social-links">
+                <a href="mailto:mohoatu@gmail.com">✉️ Email</a>
+                <a href="tel:0964975209">📞 0964 975 209</a>
                 <a href="https://github.com/mohoatu">GitHub</a>
-                <a href="https://twitter.com">Twitter</a>
-                <a href="mailto:your-email@example.com">Email</a>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Mohoatu. All rights reserved.</p>
+        <div class="container">
+            <p>&copy; 2026 Le Hoang Quang Trung. All rights reserved.</p>
+        </div>
     </footer>
 </body>
 </html>
