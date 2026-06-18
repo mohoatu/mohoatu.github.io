@@ -1,0 +1,31 @@
+# Jekyll configuration for GitHub Pages
+
+# Site settings
+title: Mohoatu's Website
+description: Welcome to my personal website
+author: Mohoatu
+url: https://mohoatu.github.io
+
+# Theme - using Minima (GitHub Pages default)
+theme: minima
+
+# Minima theme settings
+minima:
+  skin: auto
+  social_links:
+    - { platform: github, user_url: "https://github.com/mohoatu" }
+    - { platform: linkedin, user_url: "https://linkedin.com" }
+    - { platform: twitter, user_url: "https://twitter.com" }
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Exclude from processing
+exclude:
+  - .gitignore
+  - README.md
+  - LICENSE
